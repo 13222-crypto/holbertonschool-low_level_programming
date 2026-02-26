@@ -1,10 +1,25 @@
-cat > main.h << 'EOF'
-#ifndef MAIN_H
-#define MAIN_H
+#include "main.h"
 
-int _putchar(char c);
-void print_alphabet(void);
-void print_alphabet_x10(void);
+/**
+ * print_alphabet_x10 - prints the alphabet 10 times
+ *
+ * Return: Nothing.
+ */
+void print_alphabet_x10(void)
+{
+	int i;
+	char c;
 
-#endif
-EOF
+	i = 0;
+	while (i < 10)
+	{
+		c = 'a';
+		while (c <= 'z')
+		{
+			_putchar(c);
+			c++;
+		}
+		_putchar('\n');
+		i++;
+	}
+}
