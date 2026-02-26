@@ -1,18 +1,10 @@
-void print_alphabet_x10(void)
-{
-    int i;
-    char c;
+cat > main.h << 'EOF'
+#ifndef MAIN_H
+#define MAIN_H
 
-    i = 0;
-    while (i < 10)
-    {
-        c = 'a';
-        while (c <= 'z')
-        {
-            _putchar(c);
-            c++;
-        }
-        _putchar('\n');
-        i++;
-    }
-}
+int _putchar(char c);
+void print_alphabet(void);
+void print_alphabet_x10(void);
+
+#endif
+EOF
