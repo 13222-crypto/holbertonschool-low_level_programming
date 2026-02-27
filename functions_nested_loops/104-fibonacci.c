@@ -1,8 +1,7 @@
 #include <stdio.h>
-#include <string.h>
 
 /**
- * add_numbers - adds two large numbers stored as strings
+ * add_numbers - adds two large numbers stored as char arrays
  * @a: first number
  * @b: second number
  * @result: output buffer
@@ -14,14 +13,16 @@ void add_numbers(char *a, char *b, char *result)
 	int k;
 	int carry;
 	int sum;
-	int la;
-	int lb;
 	char tmp[50];
 
-	la = strlen(a);
-	lb = strlen(b);
-	i = la - 1;
-	j = lb - 1;
+	i = 0;
+	j = 0;
+	while (a[i])
+		i++;
+	while (b[j])
+		j++;
+	i--;
+	j--;
 	k = 0;
 	carry = 0;
 	while (i >= 0 || j >= 0 || carry)
@@ -35,9 +36,31 @@ void add_numbers(char *a, char *b, char *result)
 		carry = sum / 10;
 	}
 	tmp[k] = '\0';
-	for (i = 0; i < k; i++)
+	i = 0;
+	while (i < k)
+	{
 		result[i] = tmp[k - 1 - i];
+		i++;
+	}
 	result[k] = '\0';
+}
+
+/**
+ * copy_str - copies string from src to dst
+ * @dst: destination
+ * @src: source
+ */
+void copy_str(char *dst, char *src)
+{
+	int i;
+
+	i = 0;
+	while (src[i])
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
 }
 
 /**
@@ -52,8 +75,10 @@ int main(void)
 	char c[50];
 	int i;
 
-	strcpy(a, "1");
-	strcpy(b, "2");
+	a[0] = '1';
+	a[1] = '\0';
+	b[0] = '2';
+	b[1] = '\0';
 	i = 1;
 	while (i <= 98)
 	{
@@ -62,8 +87,8 @@ int main(void)
 		else
 			printf("%s", a);
 		add_numbers(a, b, c);
-		strcpy(a, b);
-		strcpy(b, c);
+		copy_str(a, b);
+		copy_str(b, c);
 		i++;
 	}
 	printf("\n");
