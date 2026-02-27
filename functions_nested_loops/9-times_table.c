@@ -18,20 +18,20 @@ void times_table(void)
 		while (j <= 9)
 		{
 			result = i * j;
-			if (j != 0)
-				_putchar(',');
 			if (j == 0)
 			{
 				_putchar('0' + result);
 			}
 			else if (result >= 10)
 			{
+				_putchar(',');
 				_putchar(' ');
 				_putchar('0' + result / 10);
 				_putchar('0' + result % 10);
 			}
 			else
 			{
+				_putchar(',');
 				_putchar(' ');
 				_putchar('0' + result);
 			}
