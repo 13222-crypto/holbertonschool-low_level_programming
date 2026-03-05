@@ -5,5 +5,6 @@
 
 int _putchar(int c);
 void _puts(char *str);
+void puts2(char *str);
 
 #endif
