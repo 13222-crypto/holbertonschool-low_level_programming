@@ -8,21 +8,21 @@
  */
 int main(void)
 {
+	unsigned int d;
 	double n;
-	double i;
 	double largest;
 
 	n = 612852475143.0;
 	largest = 1;
-	i = 2;
-	while (i <= sqrt(n))
+	d = 2;
+	while ((double)d * (double)d <= n)
 	{
-		while ((int)(n / i) * i == n)
+		while (fmod(n, d) == 0)
 		{
-			largest = i;
-			n /= i;
+			largest = d;
+			n /= d;
 		}
-		i++;
+		d++;
 	}
 	if (n > 1)
 		largest = n;
