@@ -9,32 +9,25 @@
 int _atoi(char *s)
 {
 	int sign;
-	int result;
-	int digit_found;
+	unsigned int result;
+	int i;
 
 	sign = 1;
 	result = 0;
-	digit_found = 0;
-	while (*s != '\0')
+	i = 0;
+	while (s[i] != '\0')
 	{
-		if (*s == '-' && digit_found == 0)
+		if (s[i] == '-')
+			sign = sign * -1;
+		else if (s[i] == '+')
+			sign = sign * 1;
+		else if (s[i] >= '0' && s[i] <= '9')
 		{
-			sign *= -1;
+			result = result * 10 + (s[i] - '0');
 		}
-		else if (*s == '+' && digit_found == 0)
-		{
-			sign *= 1;
-		}
-		else if (*s >= '0' && *s <= '9')
-		{
-			digit_found = 1;
-			result = result * 10 + (*s - '0');
-		}
-		else if (digit_found == 1)
-		{
+		else if (result > 0)
 			break;
-		}
-		s++;
+		i++;
 	}
-	return (result * sign);
+	return ((int)result * sign);
 }
