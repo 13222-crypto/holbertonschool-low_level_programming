@@ -8,16 +8,16 @@
  */
 int main(void)
 {
-	long long n;
-	long long i;
-	long long largest;
+	double n;
+	double i;
+	double largest;
 
-	n = 612852475143;
+	n = 612852475143.0;
 	largest = 1;
 	i = 2;
 	while (i <= sqrt(n))
 	{
-		while (n % i == 0)
+		while ((int)(n / i) * i == n)
 		{
 			largest = i;
 			n /= i;
@@ -26,6 +26,6 @@ int main(void)
 	}
 	if (n > 1)
 		largest = n;
-	printf("%lld\n", largest);
+	printf("%.0f\n", largest);
 	return (0);
 }
