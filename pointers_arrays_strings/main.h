@@ -1,10 +1,8 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-#include <stdio.h>
-
-int _putchar(int c);
-void _puts(char *str);
-void puts2(char *str);
+int _putchar(char c);
+char *rot13(char *);
+void print_number(int n);
 
 #endif
