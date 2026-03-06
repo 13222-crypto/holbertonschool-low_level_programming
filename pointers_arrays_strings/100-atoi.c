@@ -9,7 +9,7 @@
 int _atoi(char *s)
 {
 	int sign;
-	int result;
+	unsigned int result;
 	int i;
 
 	sign = 1;
@@ -29,5 +29,5 @@ int _atoi(char *s)
 			break;
 		i++;
 	}
-	return (result * sign);
+	return ((int)result * sign);
 }
