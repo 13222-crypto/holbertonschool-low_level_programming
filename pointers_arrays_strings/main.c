@@ -2,20 +2,17 @@
 #include <stdio.h>
 
 /**
- * main - test the _strchr function
+ * main - test the _strspn function
  *
  * Return: Always 0
  */
 int main(void)
 {
-	char *s = "hello";
-	char *f;
+	char *s = "hello, world";
+	char *f = "oleh";
+	unsigned int n;
 
-	f = _strchr(s, 'l');
-
-	if (f != NULL)
-	{
-		printf("%s\n", f);
-	}
+	n = _strspn(s, f);
+	printf("%u\n", n);
 	return (0);
 }
