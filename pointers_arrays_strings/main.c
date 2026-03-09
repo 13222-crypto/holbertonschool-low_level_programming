@@ -2,16 +2,23 @@
 #include <stdio.h>
 
 /**
- * main - test the _strstr function
+ * main - test the print_chessboard function
  *
  * Return: Always 0
  */
 int main(void)
 {
-	char *haystack = "hello, world";
-	char *needle = "world";
+	char board[8][8] = {
+		{'r', 'k', 'b', 'q', 'k', 'b', 'k', 'r'},
+		{'p', 'p', 'p', 'p', 'p', 'p', 'p', 'p'},
+		{' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
+		{' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
+		{' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
+		{' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
+		{'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P'},
+		{'R', 'K', 'B', 'Q', 'K', 'B', 'K', 'R'}
+	};
 
-	printf("%s\n", _strstr(haystack, needle));
-	printf("%s\n", _strstr(haystack, "bye"));
+	print_chessboard(board);
 	return (0);
 }
