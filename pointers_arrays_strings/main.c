@@ -2,17 +2,21 @@
 #include <stdio.h>
 
 /**
- * main - test the _strspn function
+ * main - test the _strpbrk function
  *
  * Return: Always 0
  */
 int main(void)
 {
 	char *s = "hello, world";
-	char *f = "oleh";
-	unsigned int n;
+	char *f = "world";
+	char *t;
 
-	n = _strspn(s, f);
-	printf("%u\n", n);
+	t = _strpbrk(s, f);
+
+	if (t != NULL)
+	{
+		printf("%s\n", t);
+	}
 	return (0);
 }
