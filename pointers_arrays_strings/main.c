@@ -2,21 +2,16 @@
 #include <stdio.h>
 
 /**
- * main - test the _strpbrk function
+ * main - test the _strstr function
  *
  * Return: Always 0
  */
 int main(void)
 {
-	char *s = "hello, world";
-	char *f = "world";
-	char *t;
+	char *haystack = "hello, world";
+	char *needle = "world";
 
-	t = _strpbrk(s, f);
-
-	if (t != NULL)
-	{
-		printf("%s\n", t);
-	}
+	printf("%s\n", _strstr(haystack, needle));
+	printf("%s\n", _strstr(haystack, "bye"));
 	return (0);
 }
