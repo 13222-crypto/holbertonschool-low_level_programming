@@ -18,7 +18,7 @@ int is_prime_helper(int n, int i)
 
 /**
  * is_prime_number - returns 1 if prime, 0 otherwise
- * @n: the number to check
+ * @n: the number
  *
  * Return: 1 if prime, 0 if not
  */
