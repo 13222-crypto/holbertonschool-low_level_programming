@@ -1,6 +1,19 @@
 #include "main.h"
 
 /**
+ * str_len - returns length of string recursively
+ * @s: the string
+ *
+ * Return: length
+ */
+int str_len(char *s)
+{
+	if (*s == '\0')
+		return (0);
+	return (1 + str_len(s + 1));
+}
+
+/**
  * pal_helper - helper to check palindrome
  * @s: the string
  * @start: start index
@@ -25,12 +38,7 @@ int pal_helper(char *s, int start, int end)
  */
 int is_palindrome(char *s)
 {
-	int len;
-
 	if (*s == '\0')
 		return (1);
-	len = 0;
-	while (s[len])
-		len++;
-	return (pal_helper(s, 0, len - 1));
+	return (pal_helper(s, 0, str_len(s) - 1));
 }
