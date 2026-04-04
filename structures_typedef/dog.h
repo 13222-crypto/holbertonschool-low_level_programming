@@ -2,12 +2,13 @@
 #define DOG_H
 
 /**
- * struct dog - تعريف هيكل بيانات لكلب
- * @name: اسم الكلب (string)
- * @age: عمر الكلب (float)
- * @owner: اسم المالك (string)
+ * struct dog - a dog's basic info
+ * @name: First member
+ * @age: Second member
+ * @owner: Third member
  *
- * الوصف: هذا الهيكل يستخدم لتخزين معلومات الكلب الأساسية
+ * Description: Longer description of the dog struct
+ * to ensure we stay under the 80 characters limit.
  */
 struct dog
 {
