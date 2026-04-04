@@ -7,8 +7,6 @@
  * @name: name to set
  * @age: age to set
  * @owner: owner to set
- *
- * Description: This function assigns values to the dog struct members.
  */
 void init_dog(struct dog *d, char *name, float age, char *owner)
 {
