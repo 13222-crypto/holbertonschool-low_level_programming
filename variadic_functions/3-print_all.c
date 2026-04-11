@@ -27,10 +27,9 @@ void print_float(va_list args) { printf("%f", va_arg(args, double)); }
 void print_string(va_list args)
 {
 	char *s = va_arg(args, char *);
+	char *nil = "(nil)";
 
-	if (s == NULL)
-		s = "(nil)";
-	printf("%s", s);
+	printf("%s", s ? s : nil);
 }
 
 /**
@@ -44,6 +43,7 @@ void print_all(const char * const format, ...)
 	va_list args;
 	unsigned int i;
 	int first;
+	int j;
 	type_t types[] = {
 		{'c', print_char},
 		{'i', print_int},
@@ -51,7 +51,6 @@ void print_all(const char * const format, ...)
 		{'s', print_string},
 		{'\0', NULL}
 	};
-	int j;
 
 	va_start(args, format);
 	i = 0;
@@ -59,17 +58,14 @@ void print_all(const char * const format, ...)
 	while (format && format[i])
 	{
 		j = 0;
-		while (types[j].type != '\0')
-		{
-			if (format[i] == types[j].type)
-			{
-				if (!first)
-					printf(", ");
-				types[j].f(args);
-				first = 0;
-				break;
-			}
+		while (types[j].type != '\0' && types[j].type != format[i])
 			j++;
+		if (types[j].type != '\0')
+		{
+			if (!first)
+				printf(", ");
+			types[j].f(args);
+			first = 0;
 		}
 		i++;
 	}
