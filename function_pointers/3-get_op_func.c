@@ -1,8 +1,7 @@
-#include "3-op_functions.h"
-#include <string.h>
+#include "3-calc.h"
 
 /**
- * get_op_func - returns the function corresponding to the operator
+ * get_op_func - returns the function for the operator
  * @s: the operator string
  *
  * Return: pointer to the function, or NULL if not found.
