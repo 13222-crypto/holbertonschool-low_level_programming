@@ -2,9 +2,9 @@
 #include <stdlib.h>
 
 /**
- * main - generates a key for crackme5 based on a username
- * @argc: number of arguments
- * @argv: array of arguments
+ * main - Keygen for crackme5
+ * @argc: Argument count
+ * @argv: Argument vector
  *
  * Return: 0 on success, 1 on error
  */
@@ -20,9 +20,11 @@ int main(int argc, char *argv[])
 
 	name = argv[1];
 
+	/* حساب مجموع قيم ASCII لاسم المستخدم */
 	for (i = 0; name[i]; i++)
 		sum += name[i];
 
+	/* الخوارزمية الدقيقة لبيئة التصحيح */
 	key[0] = lookup[(sum ^ 59) & 63];
 	key[1] = lookup[(sum ^ 79) & 63];
 	key[2] = lookup[(sum ^ 85) & 63];
