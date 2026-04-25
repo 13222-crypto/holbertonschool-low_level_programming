@@ -20,7 +20,6 @@ int append_text_to_file(const char *filename, char *text_content)
 			len++;
 	}
 
-	/* O_WRONLY: للكتابة فقط، O_APPEND: للإضافة في نهاية الملف */
 	fd = open(filename, O_WRONLY | O_APPEND);
 	if (fd == -1)
 		return (-1);
