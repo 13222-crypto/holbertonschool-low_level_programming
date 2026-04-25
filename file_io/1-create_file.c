@@ -1,6 +1,4 @@
 #include "main.h"
-#include <unistd.h>
-#include <fcntl.h>
 
 /**
  * create_file - creates a file and writes text into it.
@@ -16,14 +14,13 @@ int create_file(const char *filename, char *text_content)
 	if (filename == NULL)
 		return (-1);
 
-	/* حساب طول النص إذا لم يكن فارغاً */
 	if (text_content != NULL)
 	{
 		while (text_content[len])
 			len++;
 	}
 
-	/* فتح الملف: إنشاؤه إذا لم يوجد، مسحه إذا وجد، وبصلاحيات 0600 */
+	/* قمنا بتقسيم هذا السطر ليكون أقل من 80 حرفاً */
 	fd = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
 	if (fd == -1)
 		return (-1);
