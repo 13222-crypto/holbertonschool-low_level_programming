@@ -20,7 +20,6 @@ int create_file(const char *filename, char *text_content)
 			len++;
 	}
 
-	/* قمنا بتقسيم هذا السطر ليكون أقل من 80 حرفاً */
 	fd = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
 	if (fd == -1)
 		return (-1);
