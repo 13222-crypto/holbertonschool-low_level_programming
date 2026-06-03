@@ -17,20 +17,20 @@ char *argstostr(int ac, char **av)
 	if (ac == 0 || av == NULL)
 		return (NULL);
 
-	/* حساب الطول الإجمالي المطلوب لحجز الذاكرة بدقة */
+	/* Calculate total length required for allocation */
 	for (i = 0; i < ac; i++)
 	{
 		for (j = 0; av[i][j] != '\0'; j++)
 			len++;
-		len++; /* من أجل سطر جديد '\n' بعد كل وسيط */
+		len++; /* for newline '\n' after each argument */
 	}
-	len++; /* من أجل الخانة الصفرية للنص '\0' */
+	len++; /* for null terminator '\0' */
 
 	str = malloc(sizeof(char) * len);
 	if (str == NULL)
 		return (NULL);
 
-	/* نسخ النصوص وإضافة السطور الجديدة */
+	/* Copy characters and add newlines */
 	for (i = 0; i < ac; i++)
 	{
 		for (j = 0; av[i][j] != '\0'; j++)
