@@ -3,6 +3,8 @@
 #include <string.h>
 #include <stdio.h>
 
+void insert_to_sorted_list(shash_table_t *ht, shash_node_t *new_node);
+
 /**
  * shash_table_create - Creates a sorted hash table.
  * @size: The size of the array.
