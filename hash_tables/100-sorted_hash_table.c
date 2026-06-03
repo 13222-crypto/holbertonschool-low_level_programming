@@ -1,7 +1,4 @@
 #include "hash_tables.h"
-#include <stdlib.h>
-#include <string.h>
-#include <stdio.h>
 
 void insert_to_sorted_list(shash_table_t *ht, shash_node_t *new_node);
 
